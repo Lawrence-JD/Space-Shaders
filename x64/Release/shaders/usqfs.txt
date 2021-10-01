@@ -1,0 +1,11 @@
+// USQ Fragment Shader. Used for glow.
+in vec2 v_texcoord;
+
+out vec4 color;
+
+layout(binding=0) uniform sampler2DArray tex;
+
+void main()
+{
+    color = texture( tex, vec3(v_texcoord,0));
+}

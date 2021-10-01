@@ -1,0 +1,220 @@
+﻿  glfuncs.cpp
+  main.cpp
+D:\_Portfolio\Lab11\Program.h(92,1): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+D:\_Portfolio\Lab11\Text.h(88,1): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+D:\_Portfolio\Lab11\Text.h(89,30): warning C4244: 'argument': conversion from 'int' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Lab11\Text.h(91,31): warning C4244: 'argument': conversion from 'int' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Lab11\Text.h(93,31): warning C4244: 'argument': conversion from 'int' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Lab11\Text.h(95,30): warning C4244: 'argument': conversion from 'int' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Lab11\Text.h(97,30): warning C4244: 'argument': conversion from 'int' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Lab11\Text.h(98,37): warning C4244: 'argument': conversion from 'int' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Lab11\Text.h(99,32): warning C4244: 'argument': conversion from 'int' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Lab11\Text.h(100,37): warning C4244: 'argument': conversion from 'int' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Lab11\Text.h(101,32): warning C4244: 'argument': conversion from 'int' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Lab11\Text.h(102,32): warning C4244: 'argument': conversion from 'int' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Lab11\Text.h(103,30): warning C4244: 'argument': conversion from 'int' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Lab11\Text.h(104,32): warning C4244: 'argument': conversion from 'int' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Lab11\Text.h(131,1): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+D:\_Portfolio\Lab11\Particle.h(83,1): warning C4305: 'argument': truncation from 'double' to 'T'
+          with
+          [
+              T=float
+          ]
+D:\_Portfolio\Lab11\Billboard.h(64,1): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+D:\_Portfolio\Lab11\Framebuffer.h(58,1): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+D:\_Portfolio\Lab11\Fire.h(31,1): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+D:\_Portfolio\Lab11\Fire.h(62,1): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+D:\_Portfolio\Lab11\main.cpp(266,7): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\_Portfolio\Lab11\main.cpp(379,25): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\_Portfolio\Lab11\main.cpp(458,47): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\_Portfolio\Lab11\main.cpp(458,44): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\_Portfolio\Lab11\Image.h(60,1): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+D:\_Portfolio\Lab11\ImageTexture2DArray.h(50): message : see reference to function template instantiation 'Image::Image<uint8_t>(const std::vector<uint8_t,std::allocator<uint8_t>> &)' being compiled
+D:\_Portfolio\Lab11\Program.h(234,1): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+D:\_Portfolio\Lab11\Program.h(30): message : see reference to function template instantiation 'void Program::getLog<void(GLuint,GLsizei,GLsizei *,GLchar *)>(std::string,T (__cdecl &),GLuint)' being compiled
+          with
+          [
+              T=void (GLuint,GLsizei,GLsizei *,GLchar *)
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\xutility(138,73): warning C4244: 'argument': conversion from '_Ty' to 'int', possible loss of data
+          with
+          [
+              _Ty=unsigned __int64
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\memory(2186): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,unsigned __int64>(_Ty &,unsigned __int64 &&) noexcept(false)' being compiled
+          with
+          [
+              _Ty=Buffer
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\memory(2906): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<unsigned __int64>(unsigned __int64 &&)' being compiled
+          with
+          [
+              _Ty=Buffer
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\memory(2907): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<unsigned __int64>(unsigned __int64 &&)' being compiled
+          with
+          [
+              _Ty=Buffer
+          ]
+D:\_Portfolio\Lab11\LaserBlast.h(29): message : see reference to function template instantiation 'std::shared_ptr<Buffer> std::make_shared<Buffer,unsigned __int64>(unsigned __int64 &&)' being compiled
+  statics.cpp
+D:\_Portfolio\Lab11\Program.h(92,1): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+D:\_Portfolio\Lab11\Text.h(88,1): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+D:\_Portfolio\Lab11\Text.h(89,30): warning C4244: 'argument': conversion from 'int' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Lab11\Text.h(91,31): warning C4244: 'argument': conversion from 'int' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Lab11\Text.h(93,31): warning C4244: 'argument': conversion from 'int' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Lab11\Text.h(95,30): warning C4244: 'argument': conversion from 'int' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Lab11\Text.h(97,30): warning C4244: 'argument': conversion from 'int' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Lab11\Text.h(98,37): warning C4244: 'argument': conversion from 'int' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Lab11\Text.h(99,32): warning C4244: 'argument': conversion from 'int' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Lab11\Text.h(100,37): warning C4244: 'argument': conversion from 'int' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Lab11\Text.h(101,32): warning C4244: 'argument': conversion from 'int' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Lab11\Text.h(102,32): warning C4244: 'argument': conversion from 'int' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Lab11\Text.h(103,30): warning C4244: 'argument': conversion from 'int' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Lab11\Text.h(104,32): warning C4244: 'argument': conversion from 'int' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Lab11\Text.h(131,1): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+D:\_Portfolio\Lab11\Billboard.h(64,1): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+D:\_Portfolio\Lab11\Framebuffer.h(58,1): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+D:\_Portfolio\Lab11\Fire.h(31,1): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+D:\_Portfolio\Lab11\Fire.h(62,1): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+D:\_Portfolio\Lab11\Particle.h(83,1): warning C4305: 'argument': truncation from 'double' to 'T'
+          with
+          [
+              T=float
+          ]
+D:\_Portfolio\Lab11\Image.h(60,1): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+D:\_Portfolio\Lab11\ImageTexture2DArray.h(50): message : see reference to function template instantiation 'Image::Image<uint8_t>(const std::vector<uint8_t,std::allocator<uint8_t>> &)' being compiled
+D:\_Portfolio\Lab11\Program.h(234,1): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+D:\_Portfolio\Lab11\Program.h(30): message : see reference to function template instantiation 'void Program::getLog<void(GLuint,GLsizei,GLsizei *,GLchar *)>(std::string,T (__cdecl &),GLuint)' being compiled
+          with
+          [
+              T=void (GLuint,GLsizei,GLsizei *,GLchar *)
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\xutility(138,73): warning C4244: 'argument': conversion from '_Ty' to 'int', possible loss of data
+          with
+          [
+              _Ty=unsigned __int64
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\memory(2186): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,unsigned __int64>(_Ty &,unsigned __int64 &&) noexcept(false)' being compiled
+          with
+          [
+              _Ty=Buffer
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\memory(2906): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<unsigned __int64>(unsigned __int64 &&)' being compiled
+          with
+          [
+              _Ty=Buffer
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\memory(2907): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<unsigned __int64>(unsigned __int64 &&)' being compiled
+          with
+          [
+              _Ty=Buffer
+          ]
+D:\_Portfolio\Lab11\LaserBlast.h(29): message : see reference to function template instantiation 'std::shared_ptr<Buffer> std::make_shared<Buffer,unsigned __int64>(unsigned __int64 &&)' being compiled
+  Generating Code...
+  miniz_tinfl.c
+  Project1.vcxproj -> D:\_Portfolio\Lab11\x64\Debug\Project1.exe

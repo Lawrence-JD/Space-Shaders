@@ -1,0 +1,108 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(519,5): warning MSB8028: The intermediate directory (x64\Release\) contains files shared from another project (Project1.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  statics.cpp
+D:\_Portfolio\Space-Shaders\Program.h(99,1): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+D:\_Portfolio\Space-Shaders\Text.h(93,1): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+D:\_Portfolio\Space-Shaders\Text.h(94,30): warning C4244: 'argument': conversion from 'int' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Space-Shaders\Text.h(96,31): warning C4244: 'argument': conversion from 'int' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Space-Shaders\Text.h(98,31): warning C4244: 'argument': conversion from 'int' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Space-Shaders\Text.h(100,30): warning C4244: 'argument': conversion from 'int' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Space-Shaders\Text.h(102,30): warning C4244: 'argument': conversion from 'int' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Space-Shaders\Text.h(103,37): warning C4244: 'argument': conversion from 'int' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Space-Shaders\Text.h(104,32): warning C4244: 'argument': conversion from 'int' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Space-Shaders\Text.h(105,37): warning C4244: 'argument': conversion from 'int' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Space-Shaders\Text.h(106,32): warning C4244: 'argument': conversion from 'int' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Space-Shaders\Text.h(107,32): warning C4244: 'argument': conversion from 'int' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Space-Shaders\Text.h(108,30): warning C4244: 'argument': conversion from 'int' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Space-Shaders\Text.h(109,32): warning C4244: 'argument': conversion from 'int' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+D:\_Portfolio\Space-Shaders\Text.h(137,1): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+D:\_Portfolio\Space-Shaders\Billboard.h(69,1): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+D:\_Portfolio\Space-Shaders\Framebuffer.h(63,1): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+D:\_Portfolio\Space-Shaders\Particle.h(83,1): warning C4305: 'argument': truncation from 'double' to 'T'
+          with
+          [
+              T=float
+          ]
+D:\_Portfolio\Space-Shaders\Image.h(56,1): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+D:\_Portfolio\Space-Shaders\ImageTexture2DArray.h(64): message : see reference to function template instantiation 'Image::Image<uint8_t>(const std::vector<uint8_t,std::allocator<uint8_t>> &)' being compiled
+D:\_Portfolio\Space-Shaders\Program.h(255,1): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+D:\_Portfolio\Space-Shaders\Program.h(34): message : see reference to function template instantiation 'void Program::getLog<void(GLuint,GLsizei,GLsizei *,GLchar *)>(std::string,T (__cdecl &),GLuint)' being compiled
+          with
+          [
+              T=void (GLuint,GLsizei,GLsizei *,GLchar *)
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\xutility(138,73): warning C4244: 'argument': conversion from '_Ty' to 'int', possible loss of data
+          with
+          [
+              _Ty=unsigned __int64
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\memory(2186): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,unsigned __int64>(_Ty &,unsigned __int64 &&) noexcept(false)' being compiled
+          with
+          [
+              _Ty=Buffer
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\memory(2906): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<unsigned __int64>(unsigned __int64 &&)' being compiled
+          with
+          [
+              _Ty=Buffer
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\memory(2907): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<unsigned __int64>(unsigned __int64 &&)' being compiled
+          with
+          [
+              _Ty=Buffer
+          ]
+D:\_Portfolio\Space-Shaders\LaserBlast.h(31): message : see reference to function template instantiation 'std::shared_ptr<Buffer> std::make_shared<Buffer,unsigned __int64>(unsigned __int64 &&)' being compiled
+  miniz_tinfl.c
+  Generating code
+  2802 of 2831 functions (99.0%) were compiled, the rest were copied from previous compilation.
+    49 functions were new in current compilation
+    2 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Project1.vcxproj -> D:\_Portfolio\Space-Shaders\x64\Release\SpaceShaders.exe

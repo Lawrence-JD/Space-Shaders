@@ -1,0 +1,51 @@
+// Default Fragment Shader. Handles textures and bump maps and specular.
+in vec2 v_texcoord;
+in vec3 v_worldPos;
+in vec3 v_normal;
+in vec3 v_tangent;
+
+out vec4 color;
+
+layout(binding=0) uniform sampler2DArray tex;
+layout(binding=1) uniform sampler2DArray etex;
+layout(binding=2) uniform sampler2DArray btex;  //bumpmap
+
+void main(){
+    
+    vec4 c1 = texture( tex, vec3(v_texcoord,floor(texSlice)));
+    vec4 c2 = texture( tex, vec3(v_texcoord,ceil(texSlice)));
+    vec4 c = mix(c1,c2,fract(texSlice));
+    vec4 ec1 = texture( etex, vec3(v_texcoord,floor(texSlice)));
+    vec4 ec2 = texture( etex, vec3(v_texcoord,ceil(texSlice)));
+    vec4 ec = mix(ec1,ec2,fract(texSlice));
+    
+    if( doingGlow != 0.0 ){
+        color = ec;
+        return;
+    }
+
+    vec3 N = normalize(v_normal);
+    vec3 T = normalize(v_tangent);
+    vec3 B = normalize(cross( N,T ));
+    vec3 Q = texture(btex,vec3(v_texcoord,0)).xyz;
+    Q = 2.0 * (Q - vec3(0.5));
+    mat3 matr = mat3( T.x,B.x,N.x, T.y, B.y, N.y, T.z, B.z, N.z);   //col major
+    N = Q * matr;
+    N = (vec4(N,0) * worldMatrix).xyz;
+    
+    
+    vec3 L = normalize( lightPosition.xyz - lightPosition.w * v_worldPos);
+    float dp = dot(N,L);
+    dp = max(0.0,dp);
+    
+    vec3 V = normalize( eyePos - v_worldPos );
+    vec3 R = reflect( -L, N );
+    float sp = dot(V,R);
+    sp = max(sp,0.0);
+    sp = sp * sign(dp);
+    sp = pow(sp,shininess);
+    
+    
+    color.rgb = c.rgb * diffuse * dp * lightColor + specular * sp + ec.rgb;
+    color.a = c.a * alphaFactor;
+}

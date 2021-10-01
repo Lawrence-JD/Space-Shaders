@@ -1,0 +1,37 @@
+// Uniform definitions for passing data from CPU to GPU
+mat4 worldMatrix;
+mat4 viewMatrix;
+mat4 projMatrix;
+vec3 eyePos;
+
+vec3 diffuse;
+vec3 specular;
+float shininess;
+
+vec4 lightPosition; //w=0 for directional, 1 for positional
+vec3 lightColor;
+
+float texSlice;
+float alphaFactor;
+
+//w,h,1/w,1/h
+vec4 screenSize;
+
+//billboards
+vec2 billboardSize;
+
+//0.0 if not doing glow pass; 1.0 if we are
+float doingGlow;
+
+//for blurring
+#define MAX_BLUR_RADIUS 30
+vec4 blurWeights[MAX_BLUR_RADIUS];
+int blurRadius;
+vec2 blurDeltas;
+float blurMultiplier;
+float time;
+
+float elapsed;
+vec3 initialPosition;
+float particleTime;
+vec3 gravity;

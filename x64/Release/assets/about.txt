@@ -1,0 +1,20 @@
+file: jellyfish.blend, jellyfish.blend1, jellyfish.mtl, jellyfish.obj
+file: jellyfish.svg, jellyfish.svg.png, ship1a.blend, ship1a.blend1
+file: ship1b.blend, ship1b.blend1, ship1.blend, ship1.blend1, ship1b.mtl
+file: ship1b.obj, ship1.svg, ship1.svg.png, ship1tex.svg, ship1tex.svg.png
+file: ship2b.blend, ship2b.blend1, ship2.blend, ship2.blend1, ship2b.mtl
+file: ship2b.obj, ship2.svg, ship2.svg.png, ship2tex.svg, ship2tex.svg.png
+file: toothyjaws.blend, toothyjaws.blend1, toothyjaws.mtl, toothyjaws.obj
+file: toothyjaws.svg, toothyjaws.svg.png, bullet.blend, white.png, bullet.obj
+file: bullet.mtl, bullet.blend1, cube.mtl, cube.obj, asteroid.mtl, ship1etex.svg
+file: asteroid.jpg, bullet.ora, ship1c.mtl, asteroid.blend, ship1c.blend
+file: ship1etex.svg.png, ship1c.obj, asteroid.obj
+    Created by me in inkscape/blender/gimp
+
+file: consolefont.ttf
+    Created by me with fontforge
+
+file: nebula-0000.jpg, nebula-0001.jpg, nebula-0002.jpg
+file: nebula-0003.jpg, nebula-0004.jpg, nebula-0005.jpg 
+    Created by me using Rye Terrell's nebula simulator
+    (https://github.com/wwwtyro/space-3d)
