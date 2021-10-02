@@ -31,6 +31,7 @@ vec2 blurDeltas;
 float blurMultiplier;
 float time;
 
+// for particles
 float elapsed;
 vec3 initialPosition;
 float particleTime;

@@ -1,8 +1,0 @@
-// Particle System vertex shader.
-layout(location=0) in vec3 v0; //initial velocity
-
-void main(){
-	vec3 p = initialPosition;
-	p = p + time * (v0 + 0.5*gravity*particleTime);
-	gl_Position = vec4(p,1.0);
-}

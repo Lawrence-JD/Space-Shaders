@@ -47,5 +47,6 @@ void main(){
     
     
     color.rgb = c.rgb * diffuse * dp * lightColor + specular * sp + ec.rgb;
+	color.rgb += 0.2 * c.rgb ; // the "Darkest Dark"
     color.a = c.a * alphaFactor;
 }
