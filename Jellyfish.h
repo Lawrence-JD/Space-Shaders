@@ -4,16 +4,20 @@
 #include "Enemy.h"
 #include <cmath>
 
-
+/*
+* Class for handling the jellyfish enemies.
+*/
 class Jellyfish : public Enemy 
 {
 public:
+    // Various Jellyfish gameplay variables.
     static std::shared_ptr<Mesh> mesh;
     float initialY;
     float t;
     float amplitude;
     float frequency;
     
+    // Base Constructor.
     Jellyfish(vec3 pos) : Enemy(pos, 0.075f ) 
     {
         this->initialY = pos.y;
@@ -24,12 +28,14 @@ public:
         if(mesh == nullptr)
             mesh = std::make_shared<Mesh>("jellyfish.obj");
     }
-            
+    
+    // Standard Draw function.
     void draw()
     {
         Enemy::draw(mesh);
     }
-        
+    
+    // Standard update function.
     void update(int elapsed) override
     {
         Enemy::update(elapsed);

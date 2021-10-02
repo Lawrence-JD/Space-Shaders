@@ -3,19 +3,33 @@
 #include "math3d.h"
 #include "Program.h"
 
+/*
+* Class for handling the game's Camera.
+*/
 class Camera
 {
 public:
     float aspectRatio = 1.0f;
+
+    // Camera Position
     vec3 eye;
+
+    // Camera matricies for screen->world position transformations/projections.
     mat4 viewMatrix;
     mat4 projMatrix;
+
+    // Clipping plane distances.
     float hither = 0.1f;
     float yon = 100.0f;
+
+    // Field of View values.
     float fov_v;
     float fov_h;
+
+    // Camera direction vectors.
     vec3 right, up, look;
-    
+
+    // Base Constructor. Postion, Center of Interest, Up Vector, Field of View angle, Aspect ratio.
     Camera(vec3 eye, vec3 coi, vec3 up, float fov_v=30, float aspectRatio = 1.0f )
     {
         this->lookAt(eye,coi,up);
@@ -24,7 +38,8 @@ public:
         this->aspectRatio = aspectRatio;
         this->updateProjMatrix();
     }
-        
+    
+    // Function for move the cameras focus.
     void lookAt(vec3 eye, vec3 coi, vec3 up)
     {
         this->eye = eye;
@@ -33,7 +48,8 @@ public:
         this->up = cross( this->right, this->look );
         this->updateViewMatrix();
     }
-        
+    
+    // Function for updating the View Matrix.
     void updateViewMatrix()
     {
         this->viewMatrix = mat4(
@@ -43,6 +59,7 @@ public:
             -dot(this->eye,this->right), -dot(this->eye,this->up), dot(this->eye,this->look), 1.0f);
     }
     
+    // Function for updating the Projection Matrix.
     void updateProjMatrix()
     {
         float P = 1 + (2*this->yon)/(this->hither-this->yon);
@@ -54,7 +71,8 @@ public:
             0,                  0,                  Q,      0
         );
     }
-        
+    
+    // Standard Uniform Updater.
     void setUniforms()
     {
         Program::setUniform("viewMatrix", this->viewMatrix);
@@ -62,6 +80,7 @@ public:
         Program::setUniform("eyePos", this->eye);
     }
 
+    // Function for rotating the camera.
     void turn( float amt )
     {
         auto M = axisRotation( this->up, amt );
@@ -70,6 +89,7 @@ public:
         this->updateViewMatrix();
     }
     
+    // Function for tilting the camera.
     void tilt( float amt )
     {
         auto M = axisRotation( this->right, amt );
@@ -78,11 +98,13 @@ public:
         this->updateViewMatrix();
     }
     
+    // Function for walking the camera.
     void walk( float amt )
     {
         this->strafe(0,0,amt);
     }
     
+    // Function for strafing the camera.
     void strafe(float dr, float du, float dl)
     {
         auto delta = dr * this->right + du * this->up + dl * this->look;

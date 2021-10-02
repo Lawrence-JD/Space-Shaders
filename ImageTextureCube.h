@@ -4,11 +4,14 @@
 #include <stdexcept>
 #include <vector>
 
-
+/*
+* Class for handling Texture Cube Maps.
+*/
 class ImageTextureCube : public TextureCube 
 {
 public:
     
+    // Base Constructor. Opens and processes cubemaps
     ImageTextureCube( std::string namepattern ) : TextureCube(0) 
     {
         GLuint tmp[1];

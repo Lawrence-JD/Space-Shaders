@@ -7,17 +7,26 @@
 #include "glfuncs.h"
 #include <cassert>
 
+/*
+* Class for handling various meshes in game.
+*/
 class Mesh
 {
 public:
 
+    // Embedded material class to handle mesh texturing, bump maps, and emissives.
     class Material
     {
     public:
+        // Material name.
         std::string name;
+        // Difffuse color.
         vec3 diffuse;
+        // Specualr color.
         vec3 specular;
+        // Shineness multiplier.
         float shininess;
+        // The textures.
         std::shared_ptr<Texture> tex;
         std::shared_ptr<Texture> etex;
         std::shared_ptr<Texture> btex;
@@ -25,10 +34,14 @@ public:
         int count;  //in indices
     };
     
+    // Map of all the mesh's materials. Keyed by name.
     std::map<std::string,Material> materialDict;
+    // Vector of the mesh's materials.
     std::vector<Material> materials;
+    // Mesh Vertex Array Object.
     GLuint vao;
     
+    // Function for reading mesh files.
     std::string readLine(std::ifstream& in)
     {
         //file is open in binary mode,
@@ -49,6 +62,7 @@ public:
         }
     }
     
+    // Base constructor. Opens the mesh files and calls readline() to read in the data.
     Mesh(std::string fname)
     {
         
@@ -225,6 +239,7 @@ public:
         this->vao = vao;
     }
     
+    // Standard draw function.
     void draw()
     {
         glBindVertexArray(this->vao);

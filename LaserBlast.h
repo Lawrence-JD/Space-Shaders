@@ -2,24 +2,30 @@
 
 #include "utils.h"
 
-//factory function example
-class LaserBlast{
+/*
+* Factory class for handling the player's lasers. Drawn using glDrawArrays.
+*/
+class LaserBlast
+{
 public:
         
-    //maximum of 10 blasts on screen at once
+    // maximum of 10 blasts on screen at once
     static std::vector< std::shared_ptr<Buffer> > buffers;
     static std::vector< GLuint > vaos;
     static std::vector<bool> inUse;
     
+    // The texture and emissive texture.
     static std::shared_ptr<ImageTexture2DArray> tex;
     static std::shared_ptr<ImageTexture2DArray> etex;
     
+    // Misc. Laser Gameplay Variables.
     vec3 pos,vel;
     bool dirty;
     std::size_t idx;
     int state;
     int lifeLeft;
     
+    // Function for making new lasers.
     static std::shared_ptr<LaserBlast> make(vec3 pos, vec3 vel)
     {
         if( buffers.empty() )
@@ -52,11 +58,13 @@ public:
         return nullptr;
     }
     
+    // Base Destructor.
     ~LaserBlast()
     {
         inUse[idx]=false;
     }
     
+    // Standard Update Function.
     void update(int elapsed)
     {
         lifeLeft -= elapsed;
@@ -66,6 +74,7 @@ public:
         dirty=true;
     }
     
+    // Function used to clean up the laser's appearance by adjusting their buffer.
     void makeClean()
     {
         vec3 tmp[2];
@@ -75,6 +84,7 @@ public:
         dirty=false;
     }
     
+    // Standar Draw Function.
     void draw()
     {
         if( state == DEAD )
@@ -94,6 +104,7 @@ public:
         
             
 private:
+    // Base Constructor.
     LaserBlast( vec3 pos, vec3 vel, std::size_t idx)
     {
         this->pos=pos;

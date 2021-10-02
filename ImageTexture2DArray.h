@@ -6,16 +6,19 @@
 #include <vector>
 #include "Zip.h"
 
-
+/*
+* Class for handling Texture arrays that hold images for data.
+*/
 class ImageTexture2DArray : public DataTexture2DArray 
 {
 public:
+    // Base Constructor.
     ImageTexture2DArray(std::string fname) : ImageTexture2DArray(std::vector<std::string>({fname}))
     {
 
-
     }
     
+    // Constructor for opening and processing the image files.
     ImageTexture2DArray(std::vector<std::string> files)
     {
         std::vector<char> membuf;

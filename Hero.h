@@ -2,15 +2,25 @@
 
 #include "Ship.h"
 
-
+// 2 * Pi constant.
 static const float TWOPI=3.14159265358979323f*2.0f;
 
+/*
+* Class for handling the player.
+*/
 class Hero : public Ship
 {
 public:
+    // The player's mesh.
     static std::shared_ptr<Mesh> mesh;
+
+    // The player's collision radius.
     static constexpr float RADIUS = 0.1f;
+
+    // The frame timer.
     int frameTimer = 0;
+    
+    // Various positional/movement variables.
     float banking=0;
     float pitching=0;
     vec3 right;
@@ -18,6 +28,7 @@ public:
     vec3 facing; 
     vec3 laser1Pos,laser2Pos;
     
+    // Base Constructor.
     Hero(vec3 pos) : Ship(pos,RADIUS) 
     {
         right = vec3(0,0,-1);
@@ -27,11 +38,12 @@ public:
         if(!Hero::mesh)
             Hero::mesh = std::make_shared< Mesh >("ship1c.obj");
         
-        //find laser beam emplacements
+        // find laser beam emplacements
         laser1Pos = vec3( 0.032267f, 0.007823f, -0.029361f);
         laser2Pos = vec3( -0.03285f, 0.007823f, -0.029361f);
     }
     
+    // Function for getting the player's matrix.
     virtual mat4 getMatrix()
     {
         mat4 M( 
@@ -47,12 +59,14 @@ public:
         return M;
     }
     
+    // Base Draw Function.
     void draw()
     {
-        //updateUniforms is done in Ship.draw
+        // updateUniforms is done in Ship.draw
         Ship::draw(Hero::mesh);
     }
     
+    // Base Update function. Handles player movement.
     void update(int elapsed, std::set<int>& keyset)
     {
         float bankGoal = 0;

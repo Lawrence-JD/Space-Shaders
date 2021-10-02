@@ -4,28 +4,46 @@
 #include "utils.h"
 #include "UnitSquare.h"
 
+/*
+* Class for handling OpenGL Frame Buffer Objects.
+*/
 class Framebuffer
 {
 public:
 
+    // Static pointer to keep track of the current buffer to draw to.
     static Framebuffer* current;
     
-    //saved viewport
+    // Saved viewport
     static int saved_viewport[4];
 
+    // Draw Buffers List.
     std::vector<GLenum> drawbuffers;
+    
+    // Texture Arrays.
     std::shared_ptr<DataTexture2DArray> texture;
     std::shared_ptr<DataTexture2DArray> depthtexture;
+
+    // The Frame Buffer Object.
     GLuint fbo;
     
+    // OpenGL format Enum.
     GLenum format;
     
+    // Blur buffers.
     static std::map<std::array<int,3>, std::shared_ptr<Framebuffer> > blurHelpers;
+
+    // Map of Blur Weights for Blur calculations.
     static std::map<int, std::vector<vec4> > blurWeights;
+
+    // Maximum size of the blur.
     static const int MAX_BLUR_RADIUS = 30;
+
+    // Blur unit square and shader program.
     static std::shared_ptr<UnitSquare> blurUsq;
     static std::shared_ptr<Program> blurProgram;
     
+    // Base Constructor. Sets up all the needed OpenGL Frame Buffer attributes.
     Framebuffer(int width, int height,  int slices, GLenum format)
     {
         this->format = format;
@@ -37,7 +55,7 @@ public:
         glBindFramebuffer(GL_FRAMEBUFFER, fbo );
         for(int i=0;i<slices;++i)
         {
-            //target, attachment, texture, mip level, layer
+            // target, attachment, texture, mip level, layer
             glFramebufferTextureLayer(GL_FRAMEBUFFER,GL_COLOR_ATTACHMENT0+i, texture->tex, 0, i);
         }
         glFramebufferTextureLayer(GL_FRAMEBUFFER,GL_DEPTH_STENCIL_ATTACHMENT, depthtexture->tex, 0, 0 );
@@ -53,6 +71,7 @@ public:
         glBindFramebuffer(GL_FRAMEBUFFER,0);
     }
     
+    // Function for setting this FBO as the buffer to draw to. Used for blur and the rear view mirror.
     void setAsRenderTarget(bool clear)
     {
         if( current )
@@ -67,6 +86,7 @@ public:
       
     }
     
+    // Function for unsetting this FBO as the buffer to draw to.
     void unsetAsRenderTarget()
     {
         current = nullptr;
@@ -77,24 +97,26 @@ public:
         this->texture->generateMipmap();
     }
     
-    void dump(std::string filename)
-    {
-        std::vector<char> B(texture->w*texture->h*4*texture->slices);
-        texture->bind(0);
-        glGetTexImage(GL_TEXTURE_2D_ARRAY, 0, GL_RGBA, GL_UNSIGNED_BYTE, B.data());
-        texture->unbind(0);
-        char* p = B.data();
-        for(int i=0;i<texture->slices;++i)
-        {
-            Image img(texture->w,texture->h,"RGBA8");
-            std::memcpy( img.pixels(), p, texture->w*texture->h*4);
-            p += texture->w*texture->h*4;
-            std::string fn = filename+"-layer"+std::to_string(i)+".png";
-            img.writePng(fn);
-            std::cout << "Wrote " << fn << "\n";
-        }
-    }
-     
+    // F
+    //void dump(std::string filename)
+    //{
+    //    std::vector<char> B(texture->w*texture->h*4*texture->slices);
+    //    texture->bind(0);
+    //    glGetTexImage(GL_TEXTURE_2D_ARRAY, 0, GL_RGBA, GL_UNSIGNED_BYTE, B.data());
+    //    texture->unbind(0);
+    //    char* p = B.data();
+    //    for(int i=0;i<texture->slices;++i)
+    //    {
+    //        Image img(texture->w,texture->h,"RGBA8");
+    //        std::memcpy( img.pixels(), p, texture->w*texture->h*4);
+    //        p += texture->w*texture->h*4;
+    //        std::string fn = filename+"-layer"+std::to_string(i)+".png";
+    //        img.writePng(fn);
+    //        std::cout << "Wrote " << fn << "\n";
+    //    }
+    //}
+    
+    // Function for filling our the Blur Weights map.
     std::vector<vec4>& computeBlurWeights(int radius)
     {
         if( blurWeights.find(radius) == blurWeights.end() )
@@ -118,6 +140,7 @@ public:
         return blurWeights[radius];
     }
 
+    // Function for getting the Blur Helper for this FBO.
     std::shared_ptr<Framebuffer> getBlurHelper()
     {
 		int w = (int)texture->w;
@@ -130,6 +153,7 @@ public:
         return blurHelpers[T];
     }
     
+    // Function for calling the blur shaders.
     void blur(int radius, float multiplier=1.0f)
     {
         if( radius <= 0 )
