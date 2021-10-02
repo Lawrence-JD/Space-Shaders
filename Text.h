@@ -5,25 +5,44 @@
 #include "glfuncs.h"
 #include "Program.h"
 
+/*
+* Class for handling and rendering text to the screen. This is used for the charge % text.
+*/
 class Text
 {
 public:
+    // The shader program.
     static std::shared_ptr<Program> prog;
 
+    // The texture image.
     std::shared_ptr<ImageTexture2DArray> tex;
-    std::map<char, std::array<int,3> > metrics;     //x,y,adv
-    int maxw;   //max width of any character
-    int maxh;   //max height of any character
     
+    // Map for storing the x, y and adv attributes.
+    std::map<char, std::array<int,3> > metrics;
 
+    //max width and height of any character
+    int maxw;   
+    int maxh;
+    
+    // The Vertex Array Object
     GLuint vao;
+
+    // The screen position of the text.
     vec2 pos;
+
+    // What the text says.
     std::string txt;
+
+    // Dirty flag for only updating the texture when the text changes.
     bool dirty = false;
+
+    // OpenGL data buffers.
     std::shared_ptr<Buffer> vbuff;
     std::shared_ptr<Buffer> tbuff;
     std::shared_ptr<Buffer> ibuff;
     
+    // Base Constructor.
+    // Compiles the shaders, reads in the font files, and sets up the VAO.
     Text(std::string fontname, int size)
     {
         if(Text::prog == nullptr)
@@ -66,7 +85,8 @@ public:
         this->txt = "";
         this->dirty = false;
     }
-        
+    
+    // Setter for the text string. Also handles position.
     void setText(vec2 pos, std::string txt)
     {
         this->pos = pos;
@@ -76,7 +96,8 @@ public:
             this->dirty = true;
         }
     }
-        
+    
+    // Function to update and render the texture. Only called when the text changes.
     void renderTexture()
     {
         std::vector<float> vdata;
@@ -125,6 +146,7 @@ public:
         this->dirty=false;
     }
     
+    // Standard draw function.
     void draw()
     {
         if (this->dirty)

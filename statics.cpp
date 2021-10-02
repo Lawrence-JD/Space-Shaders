@@ -12,6 +12,10 @@
 #include "LaserBlast.h"
 #include "Particle.h"
 
+/*
+* This file contains all static objects used by the game.
+*/
+
 const vec3 Ship::deathAxis = normalize(vec3(1,1,1));
 
 

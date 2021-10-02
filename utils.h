@@ -4,7 +4,7 @@
 #include <SDL.h>
 #include <SDL_mixer.h>
 #undef main
-#pragma comment(lib, "windowscodecs.lib") // ??????????????????????????????????????????????????????????????????????
+#pragma comment(lib, "windowscodecs.lib")
 #include "math3d.h"
 #include <random>
 #include <set>
@@ -14,21 +14,24 @@
 #include <array>
 #include <cmath>
 
+/*
+* This file contains helpful utility values and functions.
+*/
 
-//states for enemies
+// Gameplay states for enemies
 #define ALIVE 1
 #define DYING 2
 #define DEAD 3
 
-
-//collision check for two spheres; c=center, r=radius
+// Collision check for two spheres; c=center, r=radius
 bool collidesWith( vec3 c1, float r1, vec3 c2, float r2);
 
+// Functions for generating random numbers.
 float uniform(float min, float max);
-
 float randrange(float min, float max);
 inline float randrange(int a, int b){ return randrange(float(a),float(b)); }
 
+// Templated helper function used to see if a set contains the given element.
 template<typename T, typename U>
 bool setContains( const std::set<T>& s, const U& item)
 {
@@ -52,7 +55,7 @@ std::string trim(const std::string& s){
     return r;
 }
 
-
+// Helper function to see if string 1 ends with string 2.
 inline
 bool endswith(const std::string& s1, const std::string& s2)
 {

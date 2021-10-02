@@ -1,13 +1,19 @@
 #pragma once
 
-
+/*
+* Class for handling the small point stars. These help give the player a sense of motion when flying.
+*/
 class Stars
 {
 public:
     
+    // The number of stars to draw.
     int numStars;
+
+    // The Vertex array object.
     GLuint vao;
     
+    // Base Constructor. Sets up the VAO to draw the given number of points at random positions.
     Stars(int num)
     {
         numStars = num;
@@ -25,6 +31,7 @@ public:
         glBindVertexArray(0);
     }
     
+    // Standard draw function.
     void draw()
     {
         Program::updateUniforms();

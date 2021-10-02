@@ -97,25 +97,6 @@ public:
         this->texture->generateMipmap();
     }
     
-    // F
-    //void dump(std::string filename)
-    //{
-    //    std::vector<char> B(texture->w*texture->h*4*texture->slices);
-    //    texture->bind(0);
-    //    glGetTexImage(GL_TEXTURE_2D_ARRAY, 0, GL_RGBA, GL_UNSIGNED_BYTE, B.data());
-    //    texture->unbind(0);
-    //    char* p = B.data();
-    //    for(int i=0;i<texture->slices;++i)
-    //    {
-    //        Image img(texture->w,texture->h,"RGBA8");
-    //        std::memcpy( img.pixels(), p, texture->w*texture->h*4);
-    //        p += texture->w*texture->h*4;
-    //        std::string fn = filename+"-layer"+std::to_string(i)+".png";
-    //        img.writePng(fn);
-    //        std::cout << "Wrote " << fn << "\n";
-    //    }
-    //}
-    
     // Function for filling our the Blur Weights map.
     std::vector<vec4>& computeBlurWeights(int radius)
     {

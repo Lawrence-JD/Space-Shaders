@@ -44,9 +44,8 @@ public:
 			updateprog = std::make_shared<Program>("cs.txt");
 		}
 		if (tex == nullptr) 
-		{
 			tex = std::make_shared<ImageTexture2DArray>("powerup.ora");
-		}
+
 		numParticles = nump;
 		deathTimer = death;
 		std::vector<ParticleData> D(numParticles);
@@ -67,6 +66,7 @@ public:
 		glBindVertexArray(0);
 	}
 
+	// Base Update Function. Called every frame.
 	void update(int elapsed) 
 	{
 		deathTimer -= elapsed;
@@ -82,10 +82,10 @@ public:
 		glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 0, 0);
 	}
 
-
+	// Base draw function.
 	void draw() 
 	{
-		tex->bind(0); //if we want to texture the particles
+		tex->bind(0); // if we want to texture the particles
 		Program::setUniform("billboardSize", vec2(0.1, 0.1));
 		Program::setUniform("initialPosition", initPos);
 		Program::updateUniforms();
