@@ -1,6 +1,6 @@
 # Space-Shaders
 OpenGL Shader Project. Uses OpenGL API and SDL event handling.
-All assets were acquired for free online.
+All assets were acquired for free online or made by James Hudson.
 All graphics in this game are done using the OpenGL API directly.
 This game utilizes ~17 shaders to produce particle systems, specular lighting, emissives/texturing, bump maps, blurring effects, billboards, and glow.
 
